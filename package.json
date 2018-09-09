@@ -1,0 +1,30 @@
+{
+  "name": "procedual_landscape_generation",
+  "version": "1.0.0",
+  "description": "generate a landscape with typescript",
+  "main": "./lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p ./tsconfig.json",
+    "watch": "watchify ./src/main.ts -p [ tsify --noImplicitAny ] -o ./docs/bundle.js",
+    "bundle": "browserify ./src/main.ts -p [ tsify --noImplicitAny ] > ./docs/bundle.js"
+  },
+  "author": "U-B",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "prettier": "^1.14.2",
+    "ts-node": "^7.0.1",
+    "tsify": "^4.0.0",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "typescript": "^2.9.2",
+    "watchify": "^3.11.0"
+  },
+  "dependencies": {
+    "@types/three": "^0.92.18",
+    "simplex-noise": "^2.4.0",
+    "three": "^0.96.0"
+  }
+}
